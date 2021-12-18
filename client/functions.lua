@@ -449,7 +449,7 @@ local EnumerateEntitiesWithinDistance = function(entities, isPlayerEntities, coo
 
 	for k,entity in pairs(entities) do
 		if #(coords - GetEntityCoords(entity)) <= maxDistance then
-			table.insert(nearbyEntities, isPlayerEntities and k or entity)
+			nearbyEntities[#nearbyEntities+1] = isPlayerEntities and k or entity
 		end
 	end
 
